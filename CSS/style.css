@@ -100,3 +100,180 @@ li {
   transform: scale(1.02);
   color: black;
 }
+
+/* Page Produit */
+
+.product {
+  border: 2px solid black;
+  border-radius: 15px;
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+  padding: 10px;
+}
+
+.name-product {
+  text-align: center;
+}
+
+.product-photo {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.description-product {
+  margin-top: 10px;
+}
+
+.price-product {
+  margin-top: 10px;
+}
+
+.price_produits {
+  font-size: 1.2rem;
+}
+
+.button-cart {
+  display: inline-block;
+  padding: 0.5em 3em;
+  border: 0.16em solid #ffa42c;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #bd59ff;
+  text-align: center;
+  transition: all 0.15s;
+  border-radius: 15px;
+  background: white;
+}
+
+.button-cart:hover {
+  color: #ffa42c;
+  border-color: #bd59ff;
+}
+
+.button-cart:active {
+  color: #ff3737;
+}
+
+.select-box {
+  position: relative;
+  display: block;
+  width: 20%;
+  margin: 2px 0 20px 0;
+  font-family: "Open Sans", "Helvetica Neue", "Segoe UI", "Calibri", "Arial",
+    sans-serif;
+  font-size: 18px;
+  color: #60666d;
+
+  @media (min-width: 768px) {
+    width: 70%;
+  }
+
+  @media (min-width: 992px) {
+    width: 50%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 30%;
+  }
+}
+
+/* Page panier */
+
+#table-cart {
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.th-produit {
+  font-weight: 300;
+}
+
+.th-produit img {
+  width: 180px;
+  height: 80px;
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .th-produit img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+button {
+  padding: 5px;
+  border-radius: 15px;
+  background: linear-gradient(
+    328deg,
+    rgb(142, 90, 253) 30%,
+    rgb(221, 136, 45) 100%
+  );
+  font-weight: lighter;
+  transition: 0.2s;
+  border-color: rgb(142, 90, 253);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .btnAjouterQt,
+  .btnRetirerQt {
+    width: 20px;
+    padding: 2px;
+  }
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+#total {
+  margin-left: 15px;
+  margin-right: 20px;
+  text-align: right;
+  font-weight: bolder;
+}
+
+.flex-button {
+  display: flex;
+  flex-direction: column;
+}
+
+#table-cart i {
+  cursor: pointer;
+}
+
+#reset-cart,
+#confirm-command {
+  margin: auto;
+}
+
+#reset-cart {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+#confirm-command {
+  margin-top: 15px;
+  width: 20%;
+}
+
+/* Formulaire */
+
+#formulaire-commande {
+  max-width: 80%;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}

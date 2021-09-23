@@ -1,36 +1,30 @@
 // http://localhost:3000/api/furniture
 
-// Page Acceuil
-// const titre_produits = document.querySelector('.liste_produits')
-// const prix_produits = document.querySelector('.prix_produits')
-// const img_produits = document.querySelector('.img_produits')
-
-
-
-// API REQUEST
-const fetchProduits = async() => {
+// REQUETE API
+const fetchProducts = async() => {
     const results = await fetch(
         "http://localhost:3000/api/furniture")
         
     return results.json()
 };
 
-const showProduits = async() => {
-    const listeProduits = await fetchProduits();
-    console.log(listeProduits)
+
+// MONTRER LES PRODUITS
+const showProducts = async() => {
+    const dataProducts = await fetchProducts();
     const results = document.getElementById('results');
 
     results.innerHTML = (
 
-        listeProduits
-        .map(produit => (
+        dataProducts
+        .map(product => (
 
             `
-                <a class="selection_produits" href="./product.html?id=${produit._id}">
+                <a class="selection_produits" href="./product.html?id=${product._id}">
                     <li class="liste_produits">
-                        <img class="photo_produits" src="${produit.imageUrl}" />
-                        <h3 class="name_produits">${produit.name}</h3>
-                        <div class="price_produits">${produit.price}<i class="fas fa-euro-sign"></i>
+                        <img class="photo_produits" src="${product.imageUrl}" />
+                        <h3 class="name_produits">${product.name}</h3>
+                        <div class="price_produits">${product.price/100}€</i>
                         </div>
                     </li>
                 </a>
@@ -40,7 +34,7 @@ const showProduits = async() => {
     )
 };
 
-showProduits();
+showProducts();
 
 
 
