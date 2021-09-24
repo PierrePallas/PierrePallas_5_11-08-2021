@@ -70,12 +70,12 @@ const showPanier = (dataProduct) => {
     event.preventDefault();
 
     const choixVernis = idVernis.value;
-    const choixQuantite = idQt.value;
+    const choixQuantite = parseInt(idQt.value);
 
     let optionsProduit = {
       nomProduit: dataProduct.name,
       idProduit: id,
-      prixProduit: dataProduct.price * choixQuantite,
+      prixProduit: dataProduct.price,
       imageProduit: dataProduct.imageUrl,
       vernisProduit: choixVernis,
       quantiteProduit: choixQuantite,

@@ -60,7 +60,9 @@ const showPanier = () => {
             produitEnregistrerStorage[k].quantiteProduit
           } <button class="btnAjouterQt"><i class="fas fa-plus" "ajouterArticle></i></button></td>
           <td class="th-produit">${
-            produitEnregistrerStorage[k].prixProduit / 100
+            (produitEnregistrerStorage[k].prixProduit *
+              produitEnregistrerStorage[k].quantiteProduit) /
+            100
           }€</td>
         </tr>
         `;
@@ -152,7 +154,10 @@ if (panierVide() == false) {
   // Récupération des prix dans le panier
   if (panierVide() == false) {
     for (let m = 0; m < produitEnregistrerStorage.length; m++) {
-      let prixProduitsPanier = produitEnregistrerStorage[m].prixProduit / 100;
+      let prixProduitsPanier =
+        (produitEnregistrerStorage[m].prixProduit *
+          produitEnregistrerStorage[m].quantiteProduit) /
+        100;
 
       // Prix du panier dans la variable PrixPanierCalcul
       prixPanierCalcul.push(prixProduitsPanier);
@@ -275,10 +280,6 @@ if (panierVide() == false) {
       document.querySelector(`#${querySelectorId}`).textContent =
         "Veuillez remplir correctement le champ suivant";
     }
-
-    const textAlert = (value) => {
-      return `Merci de ne pas renseigner ni de chiffres ni de symboles \n 2 caractères minimum et 20 maximum pour la case ${value}`;
-    };
 
     // Contrôle prenom valide ou pas
     function controlePrenom() {
